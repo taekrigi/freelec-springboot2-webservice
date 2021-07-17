@@ -14,11 +14,6 @@ cache:
 
 script: "./gradlew clean build"
 
-notifications:
-  email:
-    recipients:
-      - taekrigi@gmail.com
-
 before_deploy:
   - zip -r freelec-springboot2-webservice *
   - mkdir -p deploy
@@ -45,3 +40,8 @@ deploy:
     deployment_group: freelec-springboot2-webservice-group
     region: ap-northeast-2
     wait-until-deployed: true
+
+notifications:
+  email:
+    recipients:
+      - taekrigi@gmail.com
